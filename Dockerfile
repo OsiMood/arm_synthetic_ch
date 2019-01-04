@@ -1,9 +1,8 @@
 #=======================
 # Base image to be used
 #=======================
-FROM arm32v7/debian:stable-slim
-
-COPY qemu-arm /usr/bin/qemu-arm-static
+#FROM arm32v7/debian:stable-slim
+FROM resin/armv7hf-debian:latest
 
 #==============================================
 # Maintainer Information & Project description
