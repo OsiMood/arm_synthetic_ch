@@ -3,6 +3,8 @@
 #=======================
 FROM arm32v7/debian:stable-slim
 
+COPY qemu-arm /usr/bin/qemu-arm-static
+
 #==============================================
 # Maintainer Information & Project description
 #==============================================
