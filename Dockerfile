@@ -1,7 +1,7 @@
 #=======================
 # Base image to be used
 #=======================
-FROM arm32v7/debian:stable-slim
+FROM resin/armv7hf-debian-qemu
 
 RUN [ "cross-build-start" ]
 
