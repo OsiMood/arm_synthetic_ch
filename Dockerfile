@@ -3,6 +3,8 @@
 #=======================
 FROM arm32v7/debian:stable-slim
 
+RUN [ "cross-build-start" ]
+
 #==============================================
 # Maintainer Information & Project description
 #==============================================
@@ -81,3 +83,5 @@ ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
 WORKDIR $SELENIUM_DIR
+
+RUN [ "cross-build-end" ]
