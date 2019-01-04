@@ -1,7 +1,7 @@
 #=======================
 # Base image to be used
 #=======================
-FROM arm32/debian:stable-slim
+FROM arm32v7/debian:stable-slim
 
 #==============================================
 # Maintainer Information & Project description
@@ -12,7 +12,10 @@ LABEL	maintainer="osimood@gmail.com" \
 #====================================================
 # Create a selenium folder where the scripts will be
 #====================================================
-RUN mkdir -p ./selenium
+ENV SELENIUM_DIR /selenium
+
+# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+RUN mkdir -p "$SELENIUM_DIR"
 
 RUN apt-get update && \
 	apt-get install -y gnupg2 \
@@ -76,4 +79,4 @@ RUN apt-get remove -y unzip \
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
-WORKDIR ./selenium
+WORKDIR $SELENIUM_DIR
