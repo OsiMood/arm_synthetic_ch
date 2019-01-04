@@ -1,4 +1,4 @@
-#=======================
+#======================= 
 # Base image to be used
 #=======================
 FROM arm32v7/debian:stable-slim
@@ -33,7 +33,7 @@ RUN echo "deb http://httpredir.debian.org/debian stretch main contrib non-free" 
 	apt-key adv --no-tty --keyserver keyserver.ubuntu.com --recv-keys EF0F382A1A7B6500 && \
 	apt-key adv --no-tty --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
 
-	
+
 #============================
 # Installing all needed apps
 #============================
@@ -68,7 +68,7 @@ RUN pip3 install xvfbwrapper
 RUN apt-get remove -y unzip \
 	curl \
 	wget && \
-	apt-get autoremove -y 
+	apt-get autoremove -y
 
 #====================================
 # Setting some environment variables
