@@ -1,7 +1,7 @@
 #=======================
 # Base image to be used
 #=======================
-FROM arm32v7/debian:stable-slim
+FROM arm32/debian:stable-slim
 
 #==============================================
 # Maintainer Information & Project description
