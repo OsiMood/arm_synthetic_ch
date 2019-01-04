@@ -1,23 +1,23 @@
 #=======================
 # Base image to be used
 #=======================
-#FROM arm32v7/debian:stable-slim
-FROM resin/armv7hf-debian:latest
+FROM arm32v7/debian:stable-slim
 
 #==============================================
 # Maintainer Information & Project description
 #==============================================
 LABEL	maintainer="osimood@gmail.com" \
-		description="Docker container for Selenium Testing with Chromium"
+			description="Docker container for Selenium Testing with Chromium"
 
 #====================================================
 # Create a selenium folder where the scripts will be
 #====================================================
 ENV SELENIUM_DIR /selenium
+RUN mkdir -p $SELENIUM_DIR
 
-# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
-RUN mkdir -p "$SELENIUM_DIR"
-
+#============================================================
+# Updating and installing the apps necessary for this script
+#============================================================
 RUN apt-get update && \
 	apt-get install -y gnupg2 \
 		curl \
